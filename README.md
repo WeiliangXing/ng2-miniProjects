@@ -9,3 +9,6 @@ quick start project with ng2 + gulp
 3. gulpfile.ts will be tasks to compile, copies assets to build directory
 4. need build project by npm run clean & npm run build
 5. npm run server
+
+## project 2: project2
+Http client(REST Web Services) with ng-2
