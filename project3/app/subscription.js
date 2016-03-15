@@ -79,7 +79,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 SubscriptionComponent = __decorate([
                     core_1.Component({
                         selector: 'subscription',
-                        templateUrl: './subscription.html'
+                        templateUrl: './app/subscription.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], SubscriptionComponent);

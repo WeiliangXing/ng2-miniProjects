@@ -5,13 +5,13 @@ import SubscriptionComponent from './subscription';
 
 @Component({
    selector: 'my-app',
-   templateUrl: './app/app.html'
+   templateUrl: './app/app.html',
+   directives: [SubscriptionComponent]
 })
 export class AppComponent {
   private newSearchTerm: string;
   private pusher;
   private channels: any[];
-  public title = "AppMe";
 
   constructor() {
     this.pusher = new Pusher('9fd1b33fcb36d968145f');
@@ -28,7 +28,7 @@ export class AppComponent {
       if (ch.term === channel.term) {
         this.toggleSearch(channel);
       }
-      return ch.term !== channel.term;
+      return ch.term !== channel.term;// filter will return terms not equal the removed term
     });
   }
   public toggleSearch(channel) {

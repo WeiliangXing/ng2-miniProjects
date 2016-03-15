@@ -8,7 +8,7 @@ import {
 
 @Component({
   selector: 'subscription',
-  templateUrl: './subscription.html'
+  templateUrl: './app/subscription.html'
 })
 export default class SubscriptionComponent implements OnInit, OnDestroy, AfterViewChecked {
   @Input() search: any;
