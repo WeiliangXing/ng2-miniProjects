@@ -15,6 +15,8 @@
           <button class="bright-blue-hover btn-white">Search</button>
         </form>
       </div>
+
+
     </div>
   </section>
 
@@ -23,7 +25,7 @@
       <div id="channels-list">
         <div class="channel" *ngFor="#channel of channels">
           <h3 class="white light">
-            <img class="twitter-icon" src="src/img/twitter.png" width="30" />
+            <img class="twitter-icon" src="app/img/twitter.png" width="30" />
             Tweets for {{ channel.term }}
           </h3>
           <div id="subscription-controls">
@@ -34,11 +36,12 @@
               Remove Results
             </button>
           </div>
-          <subscription [search]="channel" [pusher]="pusher"></subscription>
+          <!-- <subscription [search]="channel" [pusher]="pusher"></subscription> -->
         </div>
       </div>
     </div>
   </section>
 
-
 </div>
+
+Hello World

@@ -20,11 +20,36 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.title = "AppMe";
+                    this.pusher = new Pusher('9fd1b33fcb36d968145f');
+                    this.channels = [];
                 }
+                AppComponent.prototype.newSubscription = function () {
+                    this.channels.push({ term: this.newSearchTerm, active: true });
+                    this.newSearchTerm = '';
+                };
+                AppComponent.prototype.clearSearch = function (channel) {
+                    var _this = this;
+                    this.channels = this.channels.filter(function (ch) {
+                        if (ch.term === channel.term) {
+                            _this.toggleSearch(channel);
+                        }
+                        return ch.term !== channel.term;
+                    });
+                };
+                AppComponent.prototype.toggleSearch = function (channel) {
+                    for (var _i = 0, _a = this.channels; _i < _a.length; _i++) {
+                        var ch = _a[_i];
+                        if (ch.term === channel.term) {
+                            ch.active = !ch.active;
+                            break;
+                        }
+                    }
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n   <h3>My Bookmarks:</h3>\n   "
+                        templateUrl: './app/app.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
