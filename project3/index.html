@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>realtimePusher-ng2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="app/all-the-things.css" />
+    <link rel="stylesheet" type="text/css" href="app/style.css" />
+
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <script src="https://js.pusher.com/3.0/pusher.min.js"></script>
+
+    <script>
+      System.config({
+        packages: {
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/main')
+            .then(null, console.error.bind(console));
+    </script>
+
+  </head>
+
+  <body class="blue-gradient-background">
+    <div class="navbar navbar-inverse navbar-default" role="navigation">
+      <div class="container navbar-container">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <a href="/">
+              <img class="full-logo" src="app/img/pusher-logo.png" width="111" height="37" />
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a class="signup-link" href="https://pusher.com/signup">Create a Free Account</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <my-app></my-app>
+  </body>
+
+</html>

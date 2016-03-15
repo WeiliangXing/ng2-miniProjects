@@ -26,3 +26,6 @@ Set backend:use LoopBack
 4. node . : start backend server
 5. add new in post of bookmark in browser
 6. Now all data in localhost:3000/api/bookmarks
+
+## project 3: project3
+Real time twitter search in ng2 with Pusher
