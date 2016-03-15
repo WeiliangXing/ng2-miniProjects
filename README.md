@@ -29,3 +29,6 @@ Set backend:use LoopBack
 
 ## project 3: project3
 Real time twitter search in ng2 with Pusher
+
+### Issue:
+Cannot stream from twitter by pusher; potential issue: unclear mechanism of how to make pusher webhook works.
