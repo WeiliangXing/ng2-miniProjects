@@ -23,7 +23,7 @@ System.register(['angular2/core', './subscription'], function(exports_1, context
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.pusher = new Pusher('9fd1b33fcb36d968145f');
+                    this.pusher = new Pusher('3aea0cf22294fd1a9f08');
                     this.channels = [];
                 }
                 AppComponent.prototype.newSubscription = function () {

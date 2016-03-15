@@ -14,7 +14,7 @@ export class AppComponent {
   private channels: any[];
 
   constructor() {
-    this.pusher = new Pusher('9fd1b33fcb36d968145f');
+    this.pusher = new Pusher('3aea0cf22294fd1a9f08');
     this.channels = [];
   }
 
