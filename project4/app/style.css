@@ -1,0 +1,45 @@
+
+
+/* Styles go here */
+
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif ;
+}
+
+.player-container {
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+  float: left;
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+}
+
+button {
+  background-color: #00838F;
+  color: #fff;
+  border-radius: 3px;
+  padding: 12px 0px;
+  text-align: center;
+  cursor: pointer;
+  width: 360px;
+  border: none;
+}
+
+button:hover {
+  background-color: #006064;
+}
+
+button, p {
+  font-size: 18px;
+}
+
+.right {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
