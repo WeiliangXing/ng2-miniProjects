@@ -36,4 +36,4 @@ Cannot stream from twitter by pusher; potential issue: unclear mechanism of how 
 
 ## project 4: project4
 Rock paper scissors game in ng2
-
+This is a project practising EventEmitter
