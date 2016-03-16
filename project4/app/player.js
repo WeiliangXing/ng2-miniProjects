@@ -56,7 +56,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 PlayerComponent = __decorate([
                     core_1.Component({
                         selector: "player",
-                        template: "\n        <div [style.background-color]=\"playerColor\" class=\"player-container\">\n            <img [hidden]=\"!value\" src=\"http://demos.angular-craft.com/{{value}}.png\" [class.right]=\"playerClass\" />\n        </div>\n    "
+                        template: "\n        <div [style.background-color]=\"playerColor\" class=\"player-container\">\n            <img [hidden]=\"!value\" src=\"../images/{{value}}.png\" [class.right]=\"playerClass\" />\n        </div>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], PlayerComponent);

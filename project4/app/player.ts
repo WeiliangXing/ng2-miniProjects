@@ -4,7 +4,7 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core';
     selector: "player",
     template: `
         <div [style.background-color]="playerColor" class="player-container">
-            <img [hidden]="!value" src="http://demos.angular-craft.com/{{value}}.png" [class.right]="playerClass" />
+            <img [hidden]="!value" src="../images/{{value}}.png" [class.right]="playerClass" />
         </div>
     `
 })
