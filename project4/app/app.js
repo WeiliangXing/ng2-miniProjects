@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './player'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,59 +10,17 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var PlayerComponent, App;
+    var core_1, player_1;
+    var App;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (player_1_1) {
+                player_1 = player_1_1;
             }],
         execute: function() {
-            PlayerComponent = (function () {
-                function PlayerComponent() {
-                    this.value = "";
-                    this.shufflingDone = new core_1.EventEmitter();
-                }
-                PlayerComponent.prototype.startShuffling = function () {
-                    var _this = this;
-                    var elements = ["rock", "paper", "scissors"];
-                    var shufflingCounter = 0;
-                    var SHUFFLING_MAX = 30;
-                    var interval = setInterval(function () {
-                        if (shufflingCounter < SHUFFLING_MAX) {
-                            var randomIndex = Math.floor(Math.random() * 3);
-                            _this.value = elements[randomIndex];
-                            shufflingCounter++;
-                        }
-                        else {
-                            clearInterval(interval); //stop time
-                            _this.shufflingDone.next({ playerColor: _this.playerColor, element: _this.value });
-                        }
-                    }, 100);
-                };
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', String)
-                ], PlayerComponent.prototype, "playerColor", void 0);
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', String)
-                ], PlayerComponent.prototype, "playerClass", void 0);
-                __decorate([
-                    core_1.Output(), 
-                    __metadata('design:type', core_1.EventEmitter)
-                ], PlayerComponent.prototype, "shufflingDone", void 0);
-                PlayerComponent = __decorate([
-                    core_1.Component({
-                        selector: "player",
-                        template: "\n        <div [style.background-color]=\"playerColor\" class=\"player-container\">\n            <img [hidden]=\"!value\" src=\"http://demos.angular-craft.com/{{value}}.png\" [class.right]=\"playerClass\" />\n        </div>\n    "
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], PlayerComponent);
-                return PlayerComponent;
-            }());
-            exports_1("PlayerComponent", PlayerComponent);
-            ;
             App = (function () {
                 function App() {
                     this.gameResult = "";
@@ -95,7 +53,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Component({
                         selector: 'my-app',
                         template: "\n    <h1>Angular 2 Game <br>rock-paper-scissors</h1>\n    <player [playerColor]=\"'BLUE'\" (shufflingDone)=\"onElementSelected($event)\" #playerone></player>\n    <player [playerClass]=\"'right'\" [playerColor]=\"'RED'\" (shufflingDone)=\"onElementSelected($event)\" #playertwo></player>\n    <div style=\"clear:both\"></div>\n    <br>\n    <button (click)=\"doStartGame(playerone, playertwo)\">Start game</button>\n    <p>{{gameResult}}</p>\n  ",
-                        directives: [PlayerComponent]
+                        directives: [player_1.PlayerComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], App);
