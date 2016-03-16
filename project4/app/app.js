@@ -1,5 +1,6 @@
-System.register(['angular2/angular2'], function(exports_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,18 +10,18 @@ System.register(['angular2/angular2'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var angular2_1;
+    var core_1;
     var PlayerComponent, App;
     return {
         setters:[
-            function (angular2_1_1) {
-                angular2_1 = angular2_1_1;
+            function (core_1_1) {
+                core_1 = core_1_1;
             }],
         execute: function() {
             PlayerComponent = (function () {
                 function PlayerComponent() {
                     this.value = "";
-                    this.shufflingDone = new angular2_1.EventEmitter();
+                    this.shufflingDone = new core_1.EventEmitter();
                 }
                 PlayerComponent.prototype.startShuffling = function () {
                     var _this = this;
@@ -34,33 +35,31 @@ System.register(['angular2/angular2'], function(exports_1) {
                             shufflingCounter++;
                         }
                         else {
-                            clearInterval(interval);
+                            clearInterval(interval); //stop time
                             _this.shufflingDone.next({ playerColor: _this.playerColor, element: _this.value });
                         }
                     }, 100);
                 };
                 __decorate([
-                    angular2_1.Input(), 
+                    core_1.Input(), 
                     __metadata('design:type', String)
                 ], PlayerComponent.prototype, "playerColor", void 0);
                 __decorate([
-                    angular2_1.Input(), 
+                    core_1.Input(), 
                     __metadata('design:type', String)
                 ], PlayerComponent.prototype, "playerClass", void 0);
                 __decorate([
-                    angular2_1.Output(), 
-                    __metadata('design:type', (typeof (_a = typeof angular2_1.EventEmitter !== 'undefined' && angular2_1.EventEmitter) === 'function' && _a) || Object)
+                    core_1.Output(), 
+                    __metadata('design:type', core_1.EventEmitter)
                 ], PlayerComponent.prototype, "shufflingDone", void 0);
                 PlayerComponent = __decorate([
-                    angular2_1.Component({
+                    core_1.Component({
                         selector: "player",
-                        template: "\n        <div [style.background-color]=\"playerColor\" class=\"player-container\">\n            <img [hidden]=\"!value\" src=\"http://demos.angular-craft.com/{{value}}.png\" [ng-class]=\"playerClass\" />\n        </div>\n    ",
-                        directives: [angular2_1.CORE_DIRECTIVES]
+                        template: "\n        <div [style.background-color]=\"playerColor\" class=\"player-container\">\n            <img [hidden]=\"!value\" src=\"http://demos.angular-craft.com/{{value}}.png\" [class.right]=\"playerClass\" />\n        </div>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], PlayerComponent);
                 return PlayerComponent;
-                var _a;
             }());
             exports_1("PlayerComponent", PlayerComponent);
             ;
@@ -93,9 +92,9 @@ System.register(['angular2/angular2'], function(exports_1) {
                     return this.shufflingResults[1].playerColor + " wins !!!";
                 };
                 App = __decorate([
-                    angular2_1.Component({
+                    core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>Angular 2 Game <br>rock-paper-scissors</h1>\n    <player [player-color]=\"'BLUE'\" (shuffling-done)=\"onElementSelected($event)\" #playerone></player>\n    <player [player-class]=\"'right'\" [player-color]=\"'RED'\" (shuffling-done)=\"onElementSelected($event)\" #playertwo></player>\n    <div style=\"clear:both\"></div>\n    <br>\n    <button (click)=\"doStartGame(playerone, playertwo)\">Start game</button>\n    <p>{{gameResult}}</p>\n  ",
+                        template: "\n    <h1>Angular 2 Game <br>rock-paper-scissors</h1>\n    <player [playerColor]=\"'BLUE'\" (shufflingDone)=\"onElementSelected($event)\" #playerone></player>\n    <player [playerClass]=\"'right'\" [playerColor]=\"'RED'\" (shufflingDone)=\"onElementSelected($event)\" #playertwo></player>\n    <div style=\"clear:both\"></div>\n    <br>\n    <button (click)=\"doStartGame(playerone, playertwo)\">Start game</button>\n    <p>{{gameResult}}</p>\n  ",
                         directives: [PlayerComponent]
                     }), 
                     __metadata('design:paramtypes', [])

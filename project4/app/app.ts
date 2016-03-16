@@ -1,19 +1,18 @@
-import {Component, Input, Output, EventEmitter, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, Input, Output, EventEmitter} from 'angular2/core';
 
 @Component({
     selector: "player",
     template: `
         <div [style.background-color]="playerColor" class="player-container">
-            <img [hidden]="!value" src="http://demos.angular-craft.com/{{value}}.png" [ng-class]="playerClass" />
+            <img [hidden]="!value" src="http://demos.angular-craft.com/{{value}}.png" [class.right]="playerClass" />
         </div>
-    `,
-    directives: [CORE_DIRECTIVES]
+    `
 })
 export class PlayerComponent{
     public value = "";
     @Input() playerColor:string;
     @Input() playerClass:string;
-    @Output() shufflingDone: EventEmitter = new EventEmitter();
+    @Output() shufflingDone: EventEmitter<any> = new EventEmitter();
 
 
     startShuffling() {
@@ -28,7 +27,7 @@ export class PlayerComponent{
                     shufflingCounter++;
                 }
                 else {
-                    clearInterval(interval);
+                    clearInterval(interval);//stop time
                     this.shufflingDone.next({playerColor: this.playerColor, element:this.value});
                 }
             },
@@ -42,8 +41,8 @@ export class PlayerComponent{
   selector: 'my-app',
   template: `
     <h1>Angular 2 Game <br>rock-paper-scissors</h1>
-    <player [player-color]="'BLUE'" (shuffling-done)="onElementSelected($event)" #playerone></player>
-    <player [player-class]="'right'" [player-color]="'RED'" (shuffling-done)="onElementSelected($event)" #playertwo></player>
+    <player [playerColor]="'BLUE'" (shufflingDone)="onElementSelected($event)" #playerone></player>
+    <player [playerClass]="'right'" [playerColor]="'RED'" (shufflingDone)="onElementSelected($event)" #playertwo></player>
     <div style="clear:both"></div>
     <br>
     <button (click)="doStartGame(playerone, playertwo)">Start game</button>
