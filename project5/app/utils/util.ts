@@ -1,16 +1,14 @@
 // Credits to Christian Johansen for util logic:
 // https://github.com/cjohansen/react-sweeper
-///<reference path='../../node_modules/immutable/dist/immutable.d.ts'/>
-import Immutable = require('immutable');
 
-let {fromJS, List, Map} = Immutable;
+// let {fromJS, List, Map} = Immutable;
 
 function partition(size, coll) {
   var res = [];
   for (var i = 0, l = coll.size || coll.length; i < l; i += size) {
     res.push(coll.slice(i, i + size));
   }
-  return fromJS(res);
+  return Immutable.fromJS(res);
 }
 
 function identity(v) {
@@ -32,7 +30,7 @@ function repeat(n, val) {
   while (n--) {
     res.push(val);
   }
-  return List(res);
+  return Immutable.List(res);
 }
 
 function shuffle(list) {

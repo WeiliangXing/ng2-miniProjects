@@ -1,13 +1,15 @@
-System.register(['immutable'], function(exports_1) {
+// Credits to Christian Johansen for util logic:
+// https://github.com/cjohansen/react-sweeper
+System.register([], function(exports_1, context_1) {
     "use strict";
-    var Immutable;
-    var fromJS, List, Map;
+    var __moduleName = context_1 && context_1.id;
+    // let {fromJS, List, Map} = Immutable;
     function partition(size, coll) {
         var res = [];
         for (var i = 0, l = coll.size || coll.length; i < l; i += size) {
             res.push(coll.slice(i, i + size));
         }
-        return fromJS(res);
+        return Immutable.fromJS(res);
     }
     function identity(v) {
         return v;
@@ -25,18 +27,14 @@ System.register(['immutable'], function(exports_1) {
         while (n--) {
             res.push(val);
         }
-        return List(res);
+        return Immutable.List(res);
     }
     function shuffle(list) {
         return list.sort(function () { return Math.random() - 0.5; });
     }
     return {
-        setters:[
-            function (Immutable_1) {
-                Immutable = Immutable_1;
-            }],
+        setters:[],
         execute: function() {
-            fromJS = Immutable.fromJS, List = Immutable.List, Map = Immutable.Map;
             exports_1("partition", partition);
             exports_1("identity", identity);
             exports_1("prop", prop);

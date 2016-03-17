@@ -1,14 +1,13 @@
 // Credits to Christian Johansen for game logic:
 // https://github.com/cjohansen/react-sweeper
-///<reference path='../../node_modules/immutable/dist/immutable.d.ts'/>
-import Immutable = require('immutable');
 
-let {List,Map,fromJS} = Immutable;
+
+// let {List,Map,fromJS} = Immutable;
 import {partition, shuffle, repeat, keep, prop} from './util';
 
 function initTiles(rows, cols, mines) {
-  return shuffle(repeat(mines, Map({isMine: true, isRevealed: false})).
-                 concat(repeat(rows * cols - mines, Map({isRevealed: false})))).
+  return shuffle(repeat(mines, Immutable.Map({isMine: true, isRevealed: false})).
+                 concat(repeat(rows * cols - mines, Immutable.Map({isRevealed: false})))).
     map(function (tile, idx) {
       return tile.set('id', idx);
     });
@@ -130,10 +129,15 @@ export function revealTile(game, tile) {
 }
 
 export function createGame(options) {
-  return fromJS({
+  return Immutable.fromJS({
     cols: options.cols,
     rows: options.rows,
     playingTime: 0,
     tiles: initTiles(options.rows, options.cols, options.mines)
   });
+}
+
+
+export function tryMe(){
+
 }

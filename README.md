@@ -48,6 +48,7 @@ http://angular-craft.com/building-a-rock-paper-scissors-game-with-angular-2/
 
 ## project 5: project5
 Minesweeper game in ng2 with update and refactored version.
-
+### NOTE:
+need npm install immutable
 ### Reference:
 http://www.jvandemo.com/how-to-build-minesweeper-using-angular-2-and-immutable-js/

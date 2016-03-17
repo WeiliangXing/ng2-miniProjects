@@ -1,4 +1,4 @@
-System.register(['angular2/core', './utils/minesweeper.component', './utils/game'], function(exports_1, context_1) {
+System.register(['angular2/core', './utils/game'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,15 +10,12 @@ System.register(['angular2/core', './utils/minesweeper.component', './utils/game
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, minesweeper_component_1, game_1;
+    var core_1, game_1;
     var App;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (minesweeper_component_1_1) {
-                minesweeper_component_1 = minesweeper_component_1_1;
             },
             function (game_1_1) {
                 game_1 = game_1_1;
@@ -31,13 +28,13 @@ System.register(['angular2/core', './utils/minesweeper.component', './utils/game
                     this.startNewGame();
                 };
                 App.prototype.startNewGame = function () {
-                    this.game = game_1.createGame({ cols: 16, rows: 16, mines: 48 });
+                    // this.game = createGame({cols: 16, rows: 16, mines: 48});
+                    game_1.tryMe();
                 };
                 App = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <minesweeper [game]=\"game\" #minesweeper></minesweeper>\n    <ul class=\"actions\">\n      <li><a (click)=\"startNewGame()\">New game</a></li>\n      <li><a (click)=\"minesweeper.undo()\" [hidden]=\"!minesweeper.canUndo()\">Undo</a></li>\n    </ul>\n    ",
-                        directives: [minesweeper_component_1.MinesweeperComponent]
+                        template: "\n    <h1>Hello world</h1>\n    <ul class=\"actions\">\n      <li><a (click)=\"startNewGame()\">New game</a></li>\n\n    </ul>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], App);

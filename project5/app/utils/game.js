@@ -1,10 +1,13 @@
-System.register(['immutable', './util'], function(exports_1) {
+// Credits to Christian Johansen for game logic:
+// https://github.com/cjohansen/react-sweeper
+System.register(['./util'], function(exports_1, context_1) {
     "use strict";
-    var Immutable, util_1;
-    var List, Map, fromJS, directions;
+    var __moduleName = context_1 && context_1.id;
+    var util_1;
+    var directions;
     function initTiles(rows, cols, mines) {
-        return util_1.shuffle(util_1.repeat(mines, Map({ isMine: true, isRevealed: false })).
-            concat(util_1.repeat(rows * cols - mines, Map({ isRevealed: false })))).
+        return util_1.shuffle(util_1.repeat(mines, Immutable.Map({ isMine: true, isRevealed: false })).
+            concat(util_1.repeat(rows * cols - mines, Immutable.Map({ isRevealed: false })))).
             map(function (tile, idx) {
             return tile.set('id', idx);
         });
@@ -105,7 +108,7 @@ System.register(['immutable', './util'], function(exports_1) {
     }
     exports_1("revealTile", revealTile);
     function createGame(options) {
-        return fromJS({
+        return Immutable.fromJS({
             cols: options.cols,
             rows: options.rows,
             playingTime: 0,
@@ -113,16 +116,15 @@ System.register(['immutable', './util'], function(exports_1) {
         });
     }
     exports_1("createGame", createGame);
+    function tryMe() {
+    }
+    exports_1("tryMe", tryMe);
     return {
         setters:[
-            function (Immutable_1) {
-                Immutable = Immutable_1;
-            },
             function (util_1_1) {
                 util_1 = util_1_1;
             }],
         execute: function() {
-            List = Immutable.List, Map = Immutable.Map, fromJS = Immutable.fromJS;
             directions = [nw, n, ne, e, se, s, sw, w];
         }
     }

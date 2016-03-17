@@ -1,17 +1,15 @@
 import {Component} from 'angular2/core';
-import {MinesweeperComponent} from './utils/minesweeper.component';
-import {createGame} from './utils/game';
+import {tryMe} from './utils/game';
 
 @Component({
   selector: 'my-app',
   template: `
-    <minesweeper [game]="game" #minesweeper></minesweeper>
+    <h1>Hello world</h1>
     <ul class="actions">
       <li><a (click)="startNewGame()">New game</a></li>
-      <li><a (click)="minesweeper.undo()" [hidden]="!minesweeper.canUndo()">Undo</a></li>
+
     </ul>
-    `,
-  directives: [MinesweeperComponent]
+    `
 })
 export class App {
     public game;
@@ -22,6 +20,7 @@ export class App {
       this.startNewGame();
     }
     startNewGame(){
-      this.game = createGame({cols: 16, rows: 16, mines: 48});
+      // this.game = createGame({cols: 16, rows: 16, mines: 48});
+      tryMe();
     }
 }
