@@ -8,7 +8,7 @@ import {createGame} from './utils/game';
     <minesweeper [game]="game" #minesweeper></minesweeper>
     <ul class="actions">
       <li><a (click)="startNewGame()">New game</a></li>
-
+      <li><a (click)="minesweeper.undo()" [hidden]="!minesweeper.canUndo()">Undo</a></li>
     </ul>
     `,
     directives:[MinesweeperComponent]
@@ -18,7 +18,7 @@ export class App {
     constructor(){
 
     }
-    onInit(){
+    ngOnInit(){
       this.startNewGame();
     }
     startNewGame(){

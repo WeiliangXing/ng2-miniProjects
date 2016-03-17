@@ -31,7 +31,7 @@ System.register(['angular2/core', './util', './game', './row.component'], functi
                 function MinesweeperComponent() {
                     this.history = Immutable.List();
                 }
-                MinesweeperComponent.prototype.onChanges = function (changes) {
+                MinesweeperComponent.prototype.ngOnChanges = function (changes) {
                     // Only update game when game has actually changed
                     if (changes.hasOwnProperty('game')) {
                         this.updateGame();

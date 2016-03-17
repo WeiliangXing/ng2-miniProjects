@@ -17,7 +17,7 @@ export class MinesweeperComponent {
   rows;
   history = Immutable.List();
 
-  onChanges(changes){
+  ngOnChanges(changes){
 
     // Only update game when game has actually changed
     if(changes.hasOwnProperty('game')){

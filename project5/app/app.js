@@ -27,7 +27,7 @@ System.register(['angular2/core', './utils/minesweeper.component', './utils/game
             App = (function () {
                 function App() {
                 }
-                App.prototype.onInit = function () {
+                App.prototype.ngOnInit = function () {
                     this.startNewGame();
                 };
                 App.prototype.startNewGame = function () {
@@ -36,7 +36,7 @@ System.register(['angular2/core', './utils/minesweeper.component', './utils/game
                 App = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <minesweeper [game]=\"game\" #minesweeper></minesweeper>\n    <ul class=\"actions\">\n      <li><a (click)=\"startNewGame()\">New game</a></li>\n\n    </ul>\n    ",
+                        template: "\n    <minesweeper [game]=\"game\" #minesweeper></minesweeper>\n    <ul class=\"actions\">\n      <li><a (click)=\"startNewGame()\">New game</a></li>\n      <li><a (click)=\"minesweeper.undo()\" [hidden]=\"!minesweeper.canUndo()\">Undo</a></li>\n    </ul>\n    ",
                         directives: [minesweeper_component_1.MinesweeperComponent]
                     }), 
                     __metadata('design:paramtypes', [])
