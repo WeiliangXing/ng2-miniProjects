@@ -1,8 +1,6 @@
-// Credits to Christian Johansen for game logic:
-// https://github.com/cjohansen/react-sweeper
-System.register(['./util'], function(exports_1) {
+System.register(['immutable', './util'], function(exports_1) {
     "use strict";
-    var util_1;
+    var Immutable, util_1;
     var List, Map, fromJS, directions;
     function initTiles(rows, cols, mines) {
         return util_1.shuffle(util_1.repeat(mines, Map({ isMine: true, isRevealed: false })).
@@ -117,6 +115,9 @@ System.register(['./util'], function(exports_1) {
     exports_1("createGame", createGame);
     return {
         setters:[
+            function (Immutable_1) {
+                Immutable = Immutable_1;
+            },
             function (util_1_1) {
                 util_1 = util_1_1;
             }],

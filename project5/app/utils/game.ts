@@ -1,5 +1,7 @@
 // Credits to Christian Johansen for game logic:
 // https://github.com/cjohansen/react-sweeper
+///<reference path='../../node_modules/immutable/dist/immutable.d.ts'/>
+import Immutable = require('immutable');
 
 let {List,Map,fromJS} = Immutable;
 import {partition, shuffle, repeat, keep, prop} from './util';

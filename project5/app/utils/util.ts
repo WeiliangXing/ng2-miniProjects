@@ -1,5 +1,7 @@
 // Credits to Christian Johansen for util logic:
 // https://github.com/cjohansen/react-sweeper
+///<reference path='../../node_modules/immutable/dist/immutable.d.ts'/>
+import Immutable = require('immutable');
 
 let {fromJS, List, Map} = Immutable;
 

@@ -1,7 +1,6 @@
-// Credits to Christian Johansen for util logic:
-// https://github.com/cjohansen/react-sweeper
-System.register([], function(exports_1) {
+System.register(['immutable'], function(exports_1) {
     "use strict";
+    var Immutable;
     var fromJS, List, Map;
     function partition(size, coll) {
         var res = [];
@@ -32,7 +31,10 @@ System.register([], function(exports_1) {
         return list.sort(function () { return Math.random() - 0.5; });
     }
     return {
-        setters:[],
+        setters:[
+            function (Immutable_1) {
+                Immutable = Immutable_1;
+            }],
         execute: function() {
             fromJS = Immutable.fromJS, List = Immutable.List, Map = Immutable.Map;
             exports_1("partition", partition);
