@@ -36,6 +36,7 @@ Real time twitter search in ng2 with Pusher with update and refactored version
 
 ### Issue:
 Cannot stream from twitter by pusher; potential issue: unclear mechanism of how to make pusher webhook works.
+1. issue: pusher webhook seems not hook any tweets, thus no stream shown. Need learn more about how coonect to pusher.
 ### Reference:
 https://github.com/pusher-community/realtime-twitter-search-angular2
 
@@ -50,5 +51,7 @@ http://angular-craft.com/building-a-rock-paper-scissors-game-with-angular-2/
 Minesweeper game in ng2 with update and refactored version.
 ### NOTE:
 need npm install immutable
+### Issue:
+tile.get() is not working; unclear its mechanism with Immutable.JS.
 ### Reference:
 http://www.jvandemo.com/how-to-build-minesweeper-using-angular-2-and-immutable-js/
