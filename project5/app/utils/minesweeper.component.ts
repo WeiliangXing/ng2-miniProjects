@@ -7,7 +7,7 @@ import {RowComponent} from './row.component';
   selector: 'minesweeper',
   template: `
   <div class="board">
-    <row *ngFor="#row of rows" [row]="row" (tile-click)="handleTileClick($event)"></row>
+    <row *ngFor="#row of rows" [row]="row" (click)="handleTileClick($event)"></row>
   </div>
   `,
   directives: [RowComponent]
@@ -21,7 +21,8 @@ export class MinesweeperComponent {
 
     // Only update game when game has actually changed
     if(changes.hasOwnProperty('game')){
-      this.updateGame()
+      this.updateGame();
+      console.log(changes);
     }
   }
 
