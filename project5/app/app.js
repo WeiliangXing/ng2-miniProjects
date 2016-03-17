@@ -1,6 +1,5 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './utils/minesweeper.component', './utils/game'], function(exports_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,21 +9,34 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, minesweeper_component_1, game_1;
     var App;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (minesweeper_component_1_1) {
+                minesweeper_component_1 = minesweeper_component_1_1;
+            },
+            function (game_1_1) {
+                game_1 = game_1_1;
             }],
         execute: function() {
             App = (function () {
                 function App() {
                 }
+                App.prototype.onInit = function () {
+                    this.startNewGame();
+                };
+                App.prototype.startNewGame = function () {
+                    this.game = game_1.createGame({ cols: 16, rows: 16, mines: 48 });
+                };
                 App = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>Angular 2 Game <br>Minesweeper</h1>\n  "
+                        template: "\n    <minesweeper [game]=\"game\" #minesweeper></minesweeper>\n    <ul class=\"actions\">\n      <li><a (click)=\"startNewGame()\">New game</a></li>\n      <li><a (click)=\"minesweeper.undo()\" [hidden]=\"!minesweeper.canUndo()\">Undo</a></li>\n    </ul>\n    ",
+                        directives: [minesweeper_component_1.MinesweeperComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], App);
