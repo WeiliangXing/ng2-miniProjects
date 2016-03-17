@@ -5,7 +5,7 @@ import {TileComponent} from './tile.component';
   selector: 'row',
   template: `
   <div class="row">
-      <tile *ng-for="#tile of row" [tile]="tile" (click)="handleTileClick(tile)"></tile>
+      <tile *ngFor="#tile of row" [tile]="tile" (click)="handleTileClick(tile)"></tile>
     </div>
   `,
   directives: [TileComponent]

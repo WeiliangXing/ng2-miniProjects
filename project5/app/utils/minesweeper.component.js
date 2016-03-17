@@ -79,7 +79,7 @@ System.register(['angular2/core', './util', './game', './row.component'], functi
                 MinesweeperComponent = __decorate([
                     core_1.Component({
                         selector: 'minesweeper',
-                        template: "\n  <div class=\"board\">\n    <row *ng-for=\"#row of rows\" [row]=\"row\" (tile-click)=\"handleTileClick($event)\"></row>\n  </div>\n  ",
+                        template: "\n  <div class=\"board\">\n    <row *ngFor=\"#row of rows\" [row]=\"row\" (tile-click)=\"handleTileClick($event)\"></row>\n  </div>\n  ",
                         directives: [row_component_1.RowComponent]
                     }), 
                     __metadata('design:paramtypes', [])

@@ -39,7 +39,7 @@ System.register(['angular2/core', './tile.component'], function(exports_1, conte
                 RowComponent = __decorate([
                     core_1.Component({
                         selector: 'row',
-                        template: "\n  <div class=\"row\">\n      <tile *ng-for=\"#tile of row\" [tile]=\"tile\" (click)=\"handleTileClick(tile)\"></tile>\n    </div>\n  ",
+                        template: "\n  <div class=\"row\">\n      <tile *ngFor=\"#tile of row\" [tile]=\"tile\" (click)=\"handleTileClick(tile)\"></tile>\n    </div>\n  ",
                         directives: [tile_component_1.TileComponent]
                     }), 
                     __metadata('design:paramtypes', [])

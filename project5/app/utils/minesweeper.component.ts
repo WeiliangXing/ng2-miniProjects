@@ -7,7 +7,7 @@ import {RowComponent} from './row.component';
   selector: 'minesweeper',
   template: `
   <div class="board">
-    <row *ng-for="#row of rows" [row]="row" (tile-click)="handleTileClick($event)"></row>
+    <row *ngFor="#row of rows" [row]="row" (tile-click)="handleTileClick($event)"></row>
   </div>
   `,
   directives: [RowComponent]

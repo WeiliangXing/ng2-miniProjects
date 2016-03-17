@@ -28,7 +28,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 TileComponent = __decorate([
                     core_1.Component({
                         selector: 'tile',
-                        template: "\n  <div class=\"tile\" [class.mine]=\"tile.get('isMine')\">\n    <div class=\"lid\" *ng-if=\"!tile.get('isRevealed')\"></div>\n    <div *ng-if=\"tile.get('isRevealed') && !tile.get('isMine')\">\n      {{ tile.get('threatCount') > 0 ? tile.get('threatCount') : '' }}\n    </div>\n  </div>\n  "
+                        template: "\n  <div class=\"tile\" [class.mine]=\"tile.get('isMine')\">\n    <div class=\"lid\" *ngIf=\"!tile.get('isRevealed')\"></div>\n    <div *ngIf=\"tile.get('isRevealed') && !tile.get('isMine')\">\n      {{ tile.get('threatCount') > 0 ? tile.get('threatCount') : '' }}\n    </div>\n  </div>\n  "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], TileComponent);
