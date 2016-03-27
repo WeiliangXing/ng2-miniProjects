@@ -26,6 +26,8 @@ System.register(['angular2/core', './tile.component'], function(exports_1, conte
                     this.tileClick = new core_1.EventEmitter();
                 }
                 RowComponent.prototype.handleTileClick = function (tile) {
+                    console.log(Object.getOwnPropertyNames(tile));
+                    console.log(typeof tile);
                     this.tileClick.next(tile);
                 };
                 __decorate([

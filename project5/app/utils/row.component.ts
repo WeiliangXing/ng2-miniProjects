@@ -15,6 +15,9 @@ export class RowComponent {
   @Output() tileClick: EventEmitter<any> = new EventEmitter();
 
   handleTileClick(tile){
+    console.log(Object.getOwnPropertyNames(tile));
+    console.log(typeof tile);
+
     this.tileClick.next(tile);
   }
 }

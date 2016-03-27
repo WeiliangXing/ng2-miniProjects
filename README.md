@@ -55,3 +55,7 @@ need npm install immutable
 tile.get() is not working; unclear its mechanism with Immutable.JS.
 ### Reference:
 http://www.jvandemo.com/how-to-build-minesweeper-using-angular-2-and-immutable-js/
+
+
+## project 6: project6
+The project to build a mini e-commerce web

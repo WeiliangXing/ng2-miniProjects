@@ -22,7 +22,6 @@ export class MinesweeperComponent {
     // Only update game when game has actually changed
     if(changes.hasOwnProperty('game')){
       this.updateGame();
-      console.log(changes);
     }
   }
 
