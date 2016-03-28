@@ -59,5 +59,7 @@ http://www.jvandemo.com/how-to-build-minesweeper-using-angular-2-and-immutable-j
 
 ## project 6: project6
 The project to build a mini e-commerce web
+Here learn how to filter data and update multiple views
+
 ### Reference:
 http://blog.devcross.net/2016/03/13/angular-2-create-a-simple-ecommerce-site/
