@@ -63,3 +63,10 @@ Here learn how to filter data and update multiple views
 
 ### Reference:
 http://blog.devcross.net/2016/03/13/angular-2-create-a-simple-ecommerce-site/
+
+## project 7: project7
+The project to build admin site
+Here learn advanced layout and animation techinques.
+
+### Reference:
+https://github.com/start-angular/ani-angular-2/blob/master/README.md
