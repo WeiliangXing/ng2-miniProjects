@@ -70,3 +70,10 @@ Here learn advanced layout and animation techinques.
 
 ### Reference:
 https://github.com/start-angular/ani-angular-2/blob/master/README.md
+
+## project 8 : project8
+The project use gulp to make structured fie arrangement.
+dev source files in /dev; compiled scss/js files are in corresponding folders.
+
+### Reference:
+https://github.com/mschwarzmueller/angular2-weather-app-tut
