@@ -74,6 +74,7 @@ https://github.com/start-angular/ani-angular-2/blob/master/README.md
 ## project 8 : project8
 The project use gulp to make structured fie arrangement.
 dev source files in /dev; compiled scss/js files are in corresponding folders.
-
+the project aims for weather report; in development.
 ### Reference:
 https://github.com/mschwarzmueller/angular2-weather-app-tut
+
