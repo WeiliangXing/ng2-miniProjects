@@ -76,5 +76,6 @@ The project use gulp to make structured fie arrangement.
 dev source files in /dev; compiled scss/js files are in corresponding folders.
 the project aims for weather report; in development.
 ### Reference:
+
 https://github.com/mschwarzmueller/angular2-weather-app-tut
 
